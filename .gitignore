@@ -1,0 +1,7 @@
+# Ignored directories
+bin/
+obj/
+
+# Ignored files
+*.ncrunchproject
+*.ncrunchsolution
