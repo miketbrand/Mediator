@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SimpleMediator.cs" />
+    <Compile Include="SimpleMediatorTests.cs" />
     <Compile Include="DoubleInteger.cs" />
     <Compile Include="DoubleIntegerHandler.cs" />
     <Compile Include="DoubleIntegerReply.cs" />
@@ -50,6 +55,9 @@
       <Project>{08E26518-AFF1-4E03-9AF7-9133441B7D61}</Project>
       <Name>FusionAlliance.Mediator.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
