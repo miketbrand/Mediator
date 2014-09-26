@@ -12,7 +12,7 @@ To use the mediator, simply create a custom request reply objects. Send the requ
 
 These classes demonstrate a simple request and reply, to say hello to a given name.
 
-```
+``` csharp
 public class SayHello : IRequest<SayHelloReply>
 {
   private readonly string _name;
@@ -29,7 +29,7 @@ public class SayHello : IRequest<SayHelloReply>
 }
 ```
 
-```
+``` csharp
 public class SayHelloReply
 {
   private readonly string _hello;
@@ -48,7 +48,7 @@ public class SayHelloReply
 
 The handler's responsibility is to handle the request.
 
-```
+``` csharp
 public class SayHelloHandler : IRequestHandler<SayHello, SayHelloReply>
 {
   public void Dispose()
