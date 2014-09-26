@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAlliance.Mediator.Nin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAlliance.Mediator.Common.Tests", "FusionAlliance.Mediator.Common.Tests\FusionAlliance.Mediator.Common.Tests.csproj", "{C6C516EE-CABF-48BC-879D-653140A1D467}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAlliance.Mediator.Unity", "FusionAlliance.Mediator.Unity\FusionAlliance.Mediator.Unity.csproj", "{61C682BF-1C69-4B98-8FFE-46E5887C5CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAlliance.Mediator.Unity.Tests", "FusionAlliance.Mediator.Unity.Tests\FusionAlliance.Mediator.Unity.Tests.csproj", "{F71C57B6-5810-48A6-A03B-0188BE7E1E5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C6C516EE-CABF-48BC-879D-653140A1D467}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6C516EE-CABF-48BC-879D-653140A1D467}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6C516EE-CABF-48BC-879D-653140A1D467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C682BF-1C69-4B98-8FFE-46E5887C5CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C682BF-1C69-4B98-8FFE-46E5887C5CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C682BF-1C69-4B98-8FFE-46E5887C5CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C682BF-1C69-4B98-8FFE-46E5887C5CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71C57B6-5810-48A6-A03B-0188BE7E1E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71C57B6-5810-48A6-A03B-0188BE7E1E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71C57B6-5810-48A6-A03B-0188BE7E1E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71C57B6-5810-48A6-A03B-0188BE7E1E5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
