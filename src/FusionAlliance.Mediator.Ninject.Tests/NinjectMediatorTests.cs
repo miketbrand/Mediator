@@ -33,6 +33,13 @@ namespace FusionAlliance.Mediator.Ninject.Tests
             Assert.AreEqual(10, reply.DoubledValue);
         }
 
+        [Test]
+        public void It_throws_an_exception_when_the_handler_cannot_be_resolved()
+        {
+            var squareInteger = new SquareInteger(5);
+            Assert.Throws<UnableToResolveRequestException>(() => _mediator.Request(squareInteger));
+        }
+
         public void Dispose()
         {
             Dispose(true);

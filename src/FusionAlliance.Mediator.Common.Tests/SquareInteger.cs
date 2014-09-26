@@ -1,10 +1,10 @@
 ﻿namespace FusionAlliance.Mediator.Common.Tests
 {
-    public class DoubleInteger : IRequest<DoubleIntegerReply>
+    public class SquareInteger : IRequest<SquareIntegerReply>
     {
         private readonly int _value;
 
-        public DoubleInteger(int value)
+        public SquareInteger(int value)
         {
             _value = value;
         }
