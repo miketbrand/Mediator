@@ -69,6 +69,69 @@ public class SayHelloHandler : IRequestHandler<SayHello, SayHelloReply>
 }
 ```
 
+### Sample Request/Reply/Handler with Database
+
+The most common use of this pattern is for some type of data access, whether a database or service. In the example below, the `Product` class would be some type of data entity.
+
+*Note: This example uses [Dapper](https://github.com/StackExchange/dapper-dot-net) for database access.*
+
+``` csharp
+public class GetProductById : IRequest<Product>
+{
+    public GetProductById(int id)
+    {
+        Id = id;
+    }
+
+    public int Id { get; private set; }
+}
+
+public class GetProductByIdHandler : IRequestHandler<GetProductById, Product>
+{
+    private readonly IDbConnection _connection;
+
+    public GetProductByIdHandler(IDbConnection connection)
+    {
+        if (connection == null)
+            throw new ArgumentNullException("connection");
+
+        if (connection.State != ConnectionState.Open)
+            throw new ArgumentException(string.Format("Connection is not open. Connection state is {0}.", connection.State);
+
+        _connection = connection;
+    }
+
+    public static string Sql
+    {
+        get { return @"SELECT TOP 1 * FROM [dbo].[Products] WHERE [ProductId] = @ProductId";
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+    }
+
+    public Product Handle(GetProductById request)
+    {
+        var p = new
+        {
+            ProductId = request.Id
+        };
+        var product = _connection.Query<Product>(Sql, p).First();
+        return product;
+    }
+
+    protected virtual void Dispose(bool isDisposing)
+    {
+        if (isDisposing)
+        {
+            _connection.Dispose();
+        }
+    }
+}
+```
+
+
 ## Build
 
 *Instructions coming "soon".*
