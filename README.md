@@ -131,6 +131,17 @@ public class GetProductByIdHandler : IRequestHandler<GetProductById, Product>
 }
 ```
 
+### Asynchronous Results
+
+You have the option to handle a request asynchronously, as well, by using the `RequestAsync` extension method. Instead of returning `TReply`, the result of the request is a `Task<TReply>`.
+
+``` csharp
+var sayHello = new SayHello("World");
+var answer = mediator.RequestAsync(sayHello);
+answer.Wait();
+Assert.AreEqual("Hello, World!", answer.Result.Hello);
+```
+
 
 ## Build
 

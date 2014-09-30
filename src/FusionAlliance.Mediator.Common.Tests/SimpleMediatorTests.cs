@@ -7,12 +7,24 @@ namespace FusionAlliance.Mediator.Common.Tests
     public class SimpleMediatorTests : IDisposable
     {
         private SimpleMediator _mediator;
+        private static readonly TimeSpan _waitDuration = TimeSpan.FromSeconds(5);
 
         [SetUp]
         public void BeforeEachTest()
         {
             _mediator = new SimpleMediator();
             _mediator.Bind(typeof(IRequestHandler<DoubleInteger, DoubleIntegerReply>), typeof(DoubleIntegerHandler));
+            _mediator.Bind(typeof(IRequestHandler<SayHello, SayHelloReply>), typeof(SayHelloHandler));
+        }
+
+        [Test]
+        public void Async_requests_allow_the_thread_to_continue()
+        {
+            var request = new SayHello("World");
+            var task = _mediator.RequestAsync(request);
+            Assert.IsFalse(task.IsCompleted);
+            task.Wait(_waitDuration);
+            Assert.AreEqual("Hello, World!", task.Result.Hello);
         }
 
         [Test]
