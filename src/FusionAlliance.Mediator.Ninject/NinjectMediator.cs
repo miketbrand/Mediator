@@ -7,6 +7,12 @@ namespace FusionAlliance.Mediator.Ninject
     /// <summary>
     /// Ninject-specific implementation of a mediator class.
     /// </summary>
+    /// <remarks>
+    /// You may be tempted to override the OnDisposing method and dispose of the
+    /// Ninject kernel. DO NOT DO THIS. In most applications, the kernel is created
+    /// one time during application startup. Disposing of the kernel will remove
+    /// all type bindings from the kernel definition.
+    /// </remarks>
     public class NinjectMediator : AbstractMediator
     {
         private readonly IKernel _kernel;
