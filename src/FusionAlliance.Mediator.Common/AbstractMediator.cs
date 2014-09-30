@@ -3,15 +3,31 @@ using System.Threading.Tasks;
 
 namespace FusionAlliance.Mediator.Common
 {
+    /// <summary>
+    /// Base implementation of a mediator. Other mediators will share the
+    /// functionality of this class.
+    /// </summary>
     public abstract class AbstractMediator : IMediator
     {
+        /// <summary>
+        /// Is this mediator disposed.
+        /// </summary>
         public bool IsDisposed { get; private set; }
 
+        /// <summary>
+        /// Dispose of the mediator.
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
         }
 
+        /// <summary>
+        /// Send a request to the mediator.
+        /// </summary>
+        /// <typeparam name="TReply"></typeparam>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public TReply Request<TReply>(IRequest<TReply> request)
         {
             if (request == null)
@@ -31,11 +47,6 @@ namespace FusionAlliance.Mediator.Common
                 var message = string.Format("Unable to resolve request.\nRequested type: {0}\nRequest: {1}", typeof(IRequest<TReply>), request);
                 throw new UnableToResolveRequestException(message, e);
             }
-        }
-
-        public Task<TReply> RequestAsync<TReply>(IRequest<TReply> request)
-        {
-            return Task.FromResult(Request(request));// new Task<TReply>(() =>
         }
 
         protected virtual RequestHandlerInfo GetRequestHandler(Type requestHandlerType, Type requestType, Type replyType, string methodName = "Handle")

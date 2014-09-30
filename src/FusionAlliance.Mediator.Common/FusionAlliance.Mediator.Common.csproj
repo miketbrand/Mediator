@@ -40,11 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractAsyncRequestHandler.cs" />
     <Compile Include="AbstractRequestHandler.cs" />
     <Compile Include="AbstractMediator.cs" />
-    <Compile Include="IAsyncRequestHandler.cs" />
     <Compile Include="IMediator.cs" />
+    <Compile Include="IMediatorExtensions.cs" />
     <Compile Include="IRequestHandler.cs" />
     <Compile Include="IRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
