@@ -5,3 +5,4 @@ obj/
 # Ignored files
 *.ncrunchproject
 *.ncrunchsolution
+*.nupkg

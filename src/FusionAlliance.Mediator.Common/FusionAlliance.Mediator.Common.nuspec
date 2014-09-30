@@ -4,7 +4,7 @@
     <id>FusionAlliance.Mediators.Common</id>
     <version>$version$</version>
     <title>FusionAlliance.Mediators.Common</title>
-    <authors>Fusion Alliance, Inc., and others</authors>
+    <authors>Fusion Alliance Inc., and others</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/fusionalliance/mediator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/fusionalliance/mediator</projectUrl>
