@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
-    <id>FusionAlliance.Mediator.Ninject</id>
+    <id>FusionAlliance.Mediator.Unity</id>
     <version>$version$</version>
-    <title>FusionAlliance.Mediator.Ninject</title>
+    <title>FusionAlliance.Mediator.Unity</title>
     <authors>Fusion Alliance Inc. and others</authors>
     <owners>Fusion Alliance Inc.</owners>
     <licenseUrl>https://github.com/fusionalliance/Mediator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/fusionalliance/Mediator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Ninject-specific implementation for mediator pattern.</description>
+    <description>Unity-specific implementation for mediator pattern.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>Mediator Mediators FusionAlliance Ninject</tags>
     <dependencies>
       <dependency id="FusionAlliance.Mediator.Common" version="0.1.0" />
-      <dependency id="Ninject" version="2.0.0" />
+      <dependency id="Unity" version="3.0.0" />
     </dependencies>
   </metadata>
 </package>

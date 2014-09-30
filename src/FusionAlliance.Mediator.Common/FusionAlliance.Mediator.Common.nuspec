@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>FusionAlliance.Mediators.Common</id>
+    <id>FusionAlliance.Mediator.Common</id>
     <version>$version$</version>
-    <title>FusionAlliance.Mediators.Common</title>
+    <title>FusionAlliance.Mediator.Common</title>
     <authors>Fusion Alliance Inc., and others</authors>
     <owners>Fusion Alliance Inc.</owners>
     <licenseUrl>https://github.com/fusionalliance/mediator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/fusionalliance/mediator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Shared library for mediator pattern.</description>
+    <description>Shared library for mediator pattern. This library provides base and abstract implementations used by DI constainer-specific implementations.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>Mediator Mediators FusionAlliance</tags>
