@@ -5,13 +5,13 @@
     <version>$version$</version>
     <title>FusionAlliance.Mediators.Common</title>
     <authors>Fusion Alliance Inc., and others</authors>
-    <owners>$author$</owners>
+    <owners>Fusion Alliance Inc.</owners>
     <licenseUrl>https://github.com/fusionalliance/mediator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/fusionalliance/mediator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Shared library for mediator pattern.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
-    <tags>Mediator FusionAlliance</tags>
+    <tags>Mediator Mediators FusionAlliance</tags>
   </metadata>
 </package>

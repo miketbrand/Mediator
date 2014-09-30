@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FusionAlliance.Mediators.Ninject</id>
+    <version>$version$</version>
+    <title>FusionAlliance.Mediators.Ninject</title>
+    <authors>Fusion Alliance Inc. and others</authors>
+    <owners>Fusion Alliance Inc.</owners>
+    <licenseUrl>https://github.com/fusionalliance/Mediator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/fusionalliance/Mediator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Ninject-specific implementation for mediator pattern.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Mediator Mediators FusionAlliance Ninject</tags>
+    <dependencies>
+      <dependency id="FusionAlliance.Mediators.Common" version="0.1.0" />
+      <dependency id="Ninject" version="2.0.0" />
+    </dependencies>
+  </metadata>
+</package>
