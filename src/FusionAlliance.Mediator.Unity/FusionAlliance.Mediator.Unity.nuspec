@@ -12,7 +12,7 @@
     <description>Unity-specific implementation for mediator pattern.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
-    <tags>Mediator Mediators FusionAlliance Ninject</tags>
+    <tags>Mediator Mediators FusionAlliance Unity</tags>
     <dependencies>
       <dependency id="FusionAlliance.Mediator.Common" version="0.1.0" />
       <dependency id="Unity" version="3.0.0" />
