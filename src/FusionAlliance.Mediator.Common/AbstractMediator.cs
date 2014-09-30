@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace FusionAlliance.Mediator.Common
 {
@@ -9,7 +10,6 @@ namespace FusionAlliance.Mediator.Common
         public void Dispose()
         {
             Dispose(true);
-            IsDisposed = true;
         }
 
         public TReply Request<TReply>(IRequest<TReply> request)
@@ -33,7 +33,10 @@ namespace FusionAlliance.Mediator.Common
             }
         }
 
-        protected abstract void Dispose(bool isDisposing);
+        public Task<TReply> RequestAsync<TReply>(IRequest<TReply> request)
+        {
+            return Task.FromResult(Request(request));// new Task<TReply>(() =>
+        }
 
         protected virtual RequestHandlerInfo GetRequestHandler(Type requestHandlerType, Type requestType, Type replyType, string methodName = "Handle")
         {
@@ -52,6 +55,19 @@ namespace FusionAlliance.Mediator.Common
         {
             var result = handlerInfo.Method.Invoke(instance, parameters);
             return (TReply)result;
+        }
+
+        protected virtual void OnDisposing()
+        {
+        }
+
+        private void Dispose(bool isDisposing)
+        {
+            if (isDisposing)
+            {
+                OnDisposing();
+                IsDisposed = true;
+            }
         }
     }
 }

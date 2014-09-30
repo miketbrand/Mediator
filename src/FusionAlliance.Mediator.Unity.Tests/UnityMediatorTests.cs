@@ -21,6 +21,19 @@ namespace FusionAlliance.Mediator.Unity.Tests
         }
 
         [Test]
+        public void IsDisposed_is_false_by_default()
+        {
+            Assert.IsFalse(_mediator.IsDisposed);
+        }
+
+        [Test]
+        public void IsDisposed_is_true_after_being_disposed()
+        {
+            _mediator.Dispose();
+            Assert.IsTrue(_mediator.IsDisposed);
+        }
+
+        [Test]
         public void It_can_resolve_a_request()
         {
             var doubleInteger = new DoubleInteger(6);

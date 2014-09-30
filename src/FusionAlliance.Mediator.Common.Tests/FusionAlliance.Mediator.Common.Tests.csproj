@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SayHello.cs" />
+    <Compile Include="SayHelloHandler.cs" />
+    <Compile Include="SayHelloReply.cs" />
     <Compile Include="SimpleMediator.cs" />
     <Compile Include="SimpleMediatorTests.cs" />
     <Compile Include="DoubleInteger.cs" />

@@ -12,11 +12,6 @@ namespace FusionAlliance.Mediator.Common.Tests
             _typeDictionary.Add(interfaceType, concreteType);
         }
 
-        protected override void Dispose(bool isDisposing)
-        {
-            /* Nothing to do here. */
-        }
-
         protected override object GetInstanceOfHandler(Type type)
         {
             var concreteType = _typeDictionary[type];
