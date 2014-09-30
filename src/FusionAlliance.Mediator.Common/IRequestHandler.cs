@@ -16,7 +16,7 @@ namespace FusionAlliance.Mediator.Common
         /// Handle the given request.
         /// </summary>
         /// <param name="request">Request to be handled.</param>
-        /// <returns>Reply</returns>
+        /// <returns>Reply.</returns>
         TReply Handle(TRequest request);
     }
 }

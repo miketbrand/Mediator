@@ -2,6 +2,9 @@
 
 namespace FusionAlliance.Mediator.Common
 {
+    /// <summary>
+    /// This exception is thrown when the request cannot be resolved by the mediator.
+    /// </summary>
     [Serializable]
     public class UnableToResolveRequestException : Exception
     {

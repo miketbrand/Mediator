@@ -5,12 +5,15 @@ namespace FusionAlliance.Mediator.Common
 {
     /// <summary>
     /// Base implementation of a mediator. Other mediators will share the
-    /// functionality of this class.
+    /// functionality of this class, overriding the GetInstanceOfHandler
+    /// method.
+    /// 
+    /// This class is abstract.
     /// </summary>
     public abstract class AbstractMediator : IMediator
     {
         /// <summary>
-        /// Is this mediator disposed.
+        /// Is this mediator disposed?
         /// </summary>
         public bool IsDisposed { get; private set; }
 

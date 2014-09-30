@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 namespace FusionAlliance.Mediator.Common
 {
@@ -14,7 +13,7 @@ namespace FusionAlliance.Mediator.Common
     public interface IMediator : IDisposable
     {
         /// <summary>
-        /// Is this mediator disposed.
+        /// Is this mediator disposed?
         /// </summary>
         bool IsDisposed { get; }
 
