@@ -49,7 +49,7 @@ namespace FusionAlliance.Mediator.Common.Tests
         }
 
         [Test]
-        public void It_throws_an_exceptoin_when_the_request_is_null()
+        public void It_throws_an_exception_when_the_request_is_null()
         {
             DoubleInteger request = null;
             Assert.Throws<ArgumentNullException>(() => _mediator.Request(request));
