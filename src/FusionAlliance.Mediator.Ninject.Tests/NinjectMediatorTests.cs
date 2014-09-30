@@ -10,7 +10,7 @@ namespace FusionAlliance.Mediator.Ninject.Tests
     public class NinjectMediatorTests : IDisposable
     {
         private IKernel _kernel;
-        private static TimeSpan waitDuration = TimeSpan.FromSeconds(5);
+        private static readonly TimeSpan waitDuration = TimeSpan.FromSeconds(5);
         private IMediator _mediator;
 
         [SetUp]
