@@ -38,22 +38,22 @@ namespace FusionAlliance.Mediator.Common
             }
             Type requestType = request.GetType();
             Type replyType = typeof(TReply);
-            RequestHandlerInfo handler;
+            RequestHandlerInfo requestHandlerInfo;
             object handlerInstance;
             try
             {
-                handler = GetRequestHandler(typeof(IRequestHandler<,>), requestType, replyType);
-                handlerInstance = GetInstanceOfHandler(handler.GenericType);
+                requestHandlerInfo = GetRequestHandlerInfo(typeof(IRequestHandler<,>), requestType, replyType);
+                handlerInstance = GetInstanceOfHandler(requestHandlerInfo.GenericType);
             }
             catch (Exception e)
             {
                 var message = string.Format("Unable to resolve request.\nRequested type: {0}\nRequest: {1}", typeof(IRequest<TReply>), request);
                 throw new UnableToResolveRequestException(message, e);
             }
-            return InvokeHandlerMethod<TReply>(handler, handlerInstance, request);
+            return InvokeHandlerMethod<TReply>(requestHandlerInfo, handlerInstance, request);
         }
 
-        protected virtual RequestHandlerInfo GetRequestHandler(Type requestHandlerType, Type requestType, Type replyType, string methodName = "Handle")
+        protected virtual RequestHandlerInfo GetRequestHandlerInfo(Type requestHandlerType, Type requestType, Type replyType, string methodName = "Handle")
         {
             var genericType = requestHandlerType.MakeGenericType(requestType, replyType);
             var method = genericType.GetMethod(methodName);
