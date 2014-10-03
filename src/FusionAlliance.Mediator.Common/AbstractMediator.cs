@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 namespace FusionAlliance.Mediator.Common
 {
@@ -39,17 +38,19 @@ namespace FusionAlliance.Mediator.Common
             }
             Type requestType = request.GetType();
             Type replyType = typeof(TReply);
+            RequestHandlerInfo handler;
+            object handlerInstance;
             try
             {
-                RequestHandlerInfo handler = GetRequestHandler(typeof(IRequestHandler<,>), requestType, replyType);
-                object instance = GetInstanceOfHandler(handler.GenericType);
-                return InvokeHandlerMethod<TReply>(handler, instance, request);
+                handler = GetRequestHandler(typeof(IRequestHandler<,>), requestType, replyType);
+                handlerInstance = GetInstanceOfHandler(handler.GenericType);
             }
             catch (Exception e)
             {
                 var message = string.Format("Unable to resolve request.\nRequested type: {0}\nRequest: {1}", typeof(IRequest<TReply>), request);
                 throw new UnableToResolveRequestException(message, e);
             }
+            return InvokeHandlerMethod<TReply>(handler, handlerInstance, request);
         }
 
         protected virtual RequestHandlerInfo GetRequestHandler(Type requestHandlerType, Type requestType, Type replyType, string methodName = "Handle")
@@ -67,6 +68,9 @@ namespace FusionAlliance.Mediator.Common
 
         protected virtual TReply InvokeHandlerMethod<TReply>(RequestHandlerInfo handlerInfo, object instance, params object[] parameters)
         {
+            if (handlerInfo == null) throw new ArgumentNullException("handlerInfo");
+            if (instance == null) throw new ArgumentNullException("instance");
+
             var result = handlerInfo.Method.Invoke(instance, parameters);
             return (TReply)result;
         }
