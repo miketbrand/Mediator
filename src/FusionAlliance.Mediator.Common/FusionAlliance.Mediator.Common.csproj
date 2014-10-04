@@ -42,11 +42,13 @@
   <ItemGroup>
     <Compile Include="AbstractRequestHandler.cs" />
     <Compile Include="AbstractMediator.cs" />
+    <Compile Include="IRequestHandlerInstanceResolver.cs" />
     <Compile Include="IMediator.cs" />
     <Compile Include="IMediatorExtensions.cs" />
     <Compile Include="IRequestHandler.cs" />
     <Compile Include="IRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestHandlerMethodResolver.cs" />
     <Compile Include="RequestHandlerInfo.cs" />
     <Compile Include="UnableToResolveRequestException.cs" />
   </ItemGroup>

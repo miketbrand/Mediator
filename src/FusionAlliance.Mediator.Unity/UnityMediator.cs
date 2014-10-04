@@ -24,7 +24,7 @@ namespace FusionAlliance.Mediator.Unity
             _container = container;
         }
 
-        protected override object GetInstanceOfHandler(Type type)
+        public override object GetInstanceOfHandler(Type type)
         {
             return _container.Resolve(type);
         }

@@ -14,6 +14,11 @@ namespace FusionAlliance.Mediator.Common
         public Type GenericType { get; set; }
 
         /// <summary>
+        /// Instance of handler.
+        /// </summary>
+        public object HandlerInstance { get; set; }
+
+        /// <summary>
         /// Handler method.
         /// </summary>
         public MethodInfo Method { get; set; }

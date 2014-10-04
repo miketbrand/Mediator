@@ -26,7 +26,7 @@ namespace FusionAlliance.Mediator.Ninject
             _kernel = kernel;
         }
 
-        protected override object GetInstanceOfHandler(Type type)
+        public override object GetInstanceOfHandler(Type type)
         {
             return _kernel.Get(type);
         }

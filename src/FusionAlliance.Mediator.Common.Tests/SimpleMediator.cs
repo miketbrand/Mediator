@@ -12,7 +12,7 @@ namespace FusionAlliance.Mediator.Common.Tests
             _typeDictionary.Add(interfaceType, concreteType);
         }
 
-        protected override object GetInstanceOfHandler(Type type)
+        public override object GetInstanceOfHandler(Type type)
         {
             var concreteType = _typeDictionary[type];
             object instanceOfHandler = Activator.CreateInstance(concreteType);
