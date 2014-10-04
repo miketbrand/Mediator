@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/fusionalliance/mediator</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Shared library for mediator pattern. This library provides base and abstract implementations used by DI constainer-specific implementations.</description>
-    <releaseNotes>Bugfix in async request handling. The task was previously already resolved, which defeats its purpose. Added documentation.</releaseNotes>
+    <releaseNotes>Type resolution is now encapsulated into its own classes and interfaces.</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>Mediator Mediators FusionAlliance</tags>
   </metadata>
