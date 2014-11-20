@@ -31,7 +31,7 @@ public class SayHello : IRequest<SayHelloReply>
 {
   private readonly string _name;
 
-  public HelloRequest(string name)
+  public SayHello(string name)
   {
     _name = name;
   }
@@ -48,7 +48,7 @@ public class SayHelloReply
 {
   private readonly string _hello;
 
-  public SayHelloReplay(string hello)
+  public SayHelloReply(string hello)
   {
     _hello = hello;
   }
