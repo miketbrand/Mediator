@@ -6,3 +6,5 @@ obj/
 *.ncrunchproject
 *.ncrunchsolution
 *.nupkg
+*.DotSettings.user
+*.suo
